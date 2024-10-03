@@ -1,7 +1,14 @@
 import express from 'express'
+import coinsRouter from './routes/coinsRouter.js'
 
 const app = express();
 const PORT = 8080;
+
+//middleware
+app.use(express.json());
+
+//routes
+app.use('/', coinsRouter);
 
 // Basic route
 app.get('/', (req, res) => {
